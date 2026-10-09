@@ -1,133 +1,230 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Şekip Hayıt · Povu</title>
 <meta name="description" content="Şekip Hayıt — Chief Operating Officer, Povu">
-<meta name="theme-color" content="#0b1622">
+<meta name="theme-color" content="#0e1620">
+<meta property="og:title" content="Şekip Hayıt · Povu">
+<meta property="og:description" content="Chief Operating Officer, Povu">
+<meta property="og:image" content="https://sekiph82.github.io/SekipHayit/avatar.jpg">
+<link rel="icon" href="avatar.jpg">
+<link rel="apple-touch-icon" href="avatar.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <style>
-/* Layout: one phone-width column. B&W portrait bleeds into an ink-navy page; Povu's soap-bubble blue is the only colour. */
+/* Layout: phone-width card. Campus cover on top, large round portrait overlapping it, action-first stack, tabbed details below. */
 :root{
-  --ink:#0b1622; --panel:#13212f; --line:#22364a;
-  --fg:#eef4f9; --muted:#93a8ba;
-  --bubble:#3fb4ec; --bubble-deep:#1670b8; --on-bubble:#04121e;
-  --display:"Bricolage Grotesque",ui-rounded,"Segoe UI",system-ui,sans-serif;
-  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#0e1620; --surface:#17222e; --surface-2:#1f2c3a; --line:#2a394a;
+  --fg:#f2f6fa; --muted:#8ea2b5;
+  --blue:#1670b8; --sky:#3fb4ec; --wa:#25d366;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-body{background:var(--ink);color:var(--fg);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
-.card{max-width:460px;margin:0 auto;padding-block:0 40px}
-.hero{position:relative}
-.hero img.photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;max-width:100%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,var(--ink) 97%);pointer-events:none}
-.lang{position:absolute;top:14px;right:16px;z-index:2;display:flex;background:rgba(11,22,34,.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:3px}
-.lang button{all:unset;cursor:pointer;font:600 12px/1 var(--body);letter-spacing:.08em;padding:7px 11px;border-radius:999px;color:var(--muted)}
-.lang button[aria-pressed="true"]{background:var(--fg);color:var(--ink)}
-.lang button:focus-visible{outline:2px solid var(--bubble)}
-.wrap{padding-inline:20px;margin-top:-88px;position:relative;z-index:1;display:flex;flex-direction:column;gap:28px}
-.id h1{font:700 clamp(34px,10vw,44px)/1.02 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
-.id p{margin:8px 0 0;color:var(--muted);font-weight:500}
-.id .co{display:flex;align-items:center;gap:12px;margin-top:16px}
-.id .co img{height:44px;width:auto}
-.id .co span{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-.save{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:16px;background:var(--bubble);color:var(--on-bubble);font:700 17px/1 var(--display);text-decoration:none;box-shadow:0 10px 30px -10px rgba(63,180,236,.6)}
-.save:active{transform:scale(.98)}
-.save:focus-visible,.act:focus-visible,.soc a:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
-.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.act{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 4px 12px;border-radius:14px;background:var(--panel);color:var(--fg);text-decoration:none;font-size:12px;font-weight:600}
-.act svg{width:22px;height:22px;color:var(--bubble)}
-.rows{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.row dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.row dd{margin:0;min-width:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
-.row dd a{color:var(--fg);text-decoration:none}
-.row dd .empty{color:var(--muted);font-style:italic}
-h2{font:700 13px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
-.soc{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.soc a{display:grid;place-items:center;aspect-ratio:1;border-radius:50%;background:var(--panel);border:1px solid var(--line);color:var(--fg)}
-.soc a svg{width:24px;height:24px}
-.soc a[aria-disabled="true"]{opacity:.4;pointer-events:none}
-.vids{display:flex;flex-direction:column;gap:12px}
-.vid{position:relative;display:grid;place-items:center;aspect-ratio:16/9;max-width:100%;border-radius:14px;background:radial-gradient(circle at 30% 30%,#1b3550,var(--panel));border:1px dashed var(--line);color:var(--muted);font-size:14px;text-decoration:none;overflow:hidden}
-.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.vid .play{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(63,180,236,.18);color:var(--bubble)}
-.vid[href] .play{background:var(--bubble);color:var(--on-bubble)}
-.vid .cap{position:absolute;left:14px;bottom:10px;font-size:13px}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+.card{max-width:480px;margin:0 auto;padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+
+/* cover */
+.cover{position:relative;height:230px;background:#cfd6dc url(kapak.jpg) center 40%/cover no-repeat}
+.cover-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+@media (prefers-reduced-motion:reduce){.cover-vid{display:none}}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,22,32,.35) 0%,rgba(14,22,32,0) 35%,rgba(14,22,32,.25) 70%,var(--bg) 100%)}
+.topbar{position:absolute;z-index:2;left:16px;right:16px;top:calc(14px + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;background:rgba(14,22,32,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);color:var(--fg);font:600 13px/1 var(--font);cursor:pointer}
+.pill svg{width:16px;height:16px}
+.brand{background:rgba(255,255,255,.92);padding:0 10px;border:0;cursor:default}
+.brand img{height:30px;width:auto;display:block}
+
+/* identity */
+.who{position:relative;z-index:3;margin-top:-104px;padding-inline:20px;text-align:center}
+.avatar{width:176px;height:176px;margin:0 auto;border-radius:50%;padding:5px;background:linear-gradient(140deg,var(--sky),var(--blue) 55%,var(--bg))}
+.avatar img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--bg)}
+h1{margin:16px 0 0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.org{margin:6px 0 0;font-size:16px;font-weight:700;color:var(--sky)}
+.role{margin:2px 0 0;color:var(--muted);font-weight:500}
+
+.body{padding-inline:16px;margin-top:22px;display:flex;flex-direction:column;gap:14px}
+
+/* primary actions */
+.save-row{display:flex;gap:10px}
+.save{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--blue),#2391d8);color:#fff;font:700 16px/1 var(--font);text-decoration:none;box-shadow:0 12px 28px -12px rgba(35,145,216,.75)}
+.share{width:56px;height:56px;display:grid;place-items:center;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);color:var(--fg);cursor:pointer}
+.save svg,.share svg{width:22px;height:22px}
+.save:active,.share:active,.tile:active{transform:scale(.97)}
+
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 6px 14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:13px;font-weight:600}
+.tile i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.tile i svg{width:20px;height:20px}
+.c-call{background:var(--blue)} .c-wa{background:var(--wa)} .c-mail{background:#e2574c} .c-web{background:#5865c9}
+
+/* tabs */
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:6px -16px 0;padding:2px 16px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;height:40px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:600 14px/1 var(--font);cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.panel{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;align-items:center;gap:14px;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);color:var(--fg);text-decoration:none;min-width:0}
+.item>i{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.item>i svg{width:20px;height:20px}
+.item .txt{flex:1;min-width:0}
+.item small{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.item b{display:block;font-weight:600;font-size:15px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.item .soon{color:var(--muted);font-weight:500;font-style:italic}
+.item.off{opacity:.55}
+.mini{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--surface-2);border:1px solid var(--line);color:var(--fg);cursor:pointer;text-decoration:none}
+.mini svg{width:19px;height:19px}
+.mini.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.logo-box{display:grid;place-items:center;padding:18px;border-radius:16px;background:#fff}
+.logo-box img{height:84px;width:auto}
+
 .vplay{margin:0;display:flex;flex-direction:column;gap:8px}
-.vplay video{display:block;width:100%;max-width:100%;aspect-ratio:16/9;border-radius:14px;background:var(--panel)}
-.vplay figcaption{font-size:14px;color:var(--muted)}
-footer{text-align:center;color:var(--muted);font-size:12px}
+.vplay video{display:block;width:100%;aspect-ratio:16/9;border-radius:16px;background:var(--surface)}
+.vplay figcaption{font-size:14px;font-weight:600;color:var(--muted)}
+.vsoon{display:grid;place-items:center;aspect-ratio:16/9;border-radius:16px;border:1px dashed var(--line);color:var(--muted);font-size:14px}
+
+footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:600;font-size:14px;z-index:9}
+:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-
+</head>
+<body>
 <main class="card">
-  <div class="hero">
-    <img class="photo" src="foto.jpg" alt="Şekip Hayıt" width="640" height="800">
-    <div class="lang" role="group" aria-label="Dil / Language">
-      <button id="l-tr" type="button" data-l="tr">TR</button>
-      <button id="l-en" type="button" data-l="en">EN</button>
+  <header class="cover">
+    <video class="cover-vid" src="kapak.mp4" poster="kapak.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="topbar">
+      <button class="pill" id="lang" type="button" aria-label="Language / Dil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <span id="lang-label">English</span>
+      </button>
+      <span class="pill brand"><img src="logo.webp" alt="Povu"></span>
     </div>
-  </div>
+  </header>
 
-  <div class="wrap">
-    <section class="id">
-      <h1>Şekip Hayıt</h1>
-      <p>Chief Operating Officer</p>
-      <div class="co"><img src="logo.webp" alt="Povu" width="66" height="44"></div>
-    </section>
+  <section class="who">
+    <div class="avatar"><img src="avatar.jpg" alt="Şekip Hayıt" width="360" height="360"></div>
+    <h1>Şekip Hayıt</h1>
+    <p class="org">Povu</p>
+    <p class="role">Chief Operating Officer</p>
+  </section>
 
-    <a class="save" href="sekip-hayit.vcf" type="text/vcard">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M19 8v6M16 11h6"/></svg>
-      <span data-tr="Kişilere Ekle" data-en="Add to Contacts">Kişilere Ekle</span>
-    </a>
+  <div class="body">
+    <div class="save-row">
+      <a class="save" href="sekip-hayit.vcf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M19 8v6M16 11h6"/></svg>
+        <span data-tr="Rehbere Kaydet" data-en="Save Contact">Rehbere Kaydet</span>
+      </a>
+      <button class="share" id="share" type="button" aria-label="Paylaş / Share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
+      </button>
+    </div>
 
-    <nav class="acts">
-      <a class="act" href="tel:+905526042132"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-tr="Ara" data-en="Call">Ara</span></a>
-      <a class="act" href="https://wa.me/905526042132" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg>WhatsApp</a>
-      <a class="act" href="mailto:sekiphayit@hotmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-tr="E-posta" data-en="Email">E-posta</span></a>
-      <a class="act" href="https://www.povu.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Web</a>
+    <nav class="tiles">
+      <a class="tile" href="tel:+905526042132"><i class="c-call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></i><span data-tr="Arama Yap" data-en="Call">Arama Yap</span></a>
+      <a class="tile" href="https://wa.me/905526042132" target="_blank" rel="noopener"><i class="c-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg></i>WhatsApp</a>
+      <a class="tile" href="mailto:sekiphayit@hotmail.com"><i class="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><span data-tr="E-posta" data-en="Email">E-posta</span></a>
     </nav>
 
-    <dl class="rows">
-      <div class="row"><dt data-tr="Telefon" data-en="Phone">Telefon</dt><dd><a href="tel:+905526042132">+90 552 604 21 32</a></dd></div>
-      <div class="row"><dt data-tr="E-posta" data-en="Email">E-posta</dt><dd><a href="mailto:sekiphayit@hotmail.com">sekiphayit@hotmail.com</a></dd></div>
-      <div class="row"><dt data-tr="İş e-postası" data-en="Work email">İş e-postası</dt><dd><span class="empty" data-tr="Yakında" data-en="Coming soon">Yakında</span></dd></div>
-      <div class="row"><dt>Web</dt><dd><a href="https://www.povu.com" target="_blank" rel="noopener">www.povu.com</a></dd></div>
-      <div class="row"><dt data-tr="Adres" data-en="Address">Adres</dt><dd><span class="empty" data-tr="Yakında" data-en="Coming soon">Yakında</span></dd></div>
-    </dl>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="t-kisisel" aria-controls="p-kisisel" aria-selected="true" data-tr="Kişisel Bilgiler" data-en="Personal">Kişisel Bilgiler</button>
+      <button class="tab" role="tab" id="t-sirket" aria-controls="p-sirket" aria-selected="false" data-tr="Şirket Bilgileri" data-en="Company">Şirket Bilgileri</button>
+      <button class="tab" role="tab" id="t-sosyal" aria-controls="p-sosyal" aria-selected="false" data-tr="Sosyal Profiller" data-en="Social">Sosyal Profiller</button>
+      <button class="tab" role="tab" id="t-video" aria-controls="p-video" aria-selected="false" data-tr="Videolar" data-en="Videos">Videolar</button>
+    </div>
 
-    <section>
-      <h2 data-tr="Sosyal medya" data-en="Social">Sosyal medya</h2>
-      <!-- Link eklemek için href="" içine adresi yazın ve aria-disabled'ı silin -->
-      <div class="soc">
-        <a href="" aria-label="Facebook" aria-disabled="true" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.2C16.7 2.1 15.6 2 14.4 2 11.8 2 10 3.6 10 6.5v2H7.2V12H10v10h4V12h2.9l.4-3.5H14Z"/></svg></a>
-        <a href="" aria-label="Instagram" aria-disabled="true" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="" aria-label="X" aria-disabled="true" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/></svg></a>
-        <a href="" aria-label="YouTube" aria-disabled="true" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg></a>
+    <section class="panel" id="p-kisisel" role="tabpanel" aria-labelledby="t-kisisel">
+      <div class="item">
+        <i class="c-call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></i>
+        <a class="txt" href="tel:+905526042132" style="color:inherit;text-decoration:none"><small data-tr="Cep Telefonu" data-en="Mobile">Cep Telefonu</small><b>+90 552 604 21 32</b></a>
+        <a class="mini wa" href="https://wa.me/905526042132" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg></a>
+      </div>
+      <div class="item">
+        <i class="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i>
+        <a class="txt" href="mailto:sekiphayit@hotmail.com" style="color:inherit;text-decoration:none"><small data-tr="E-posta" data-en="Email">E-posta</small><b>sekiphayit@hotmail.com</b></a>
+        <button class="mini" type="button" data-copy="sekiphayit@hotmail.com" aria-label="Kopyala / Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button>
       </div>
     </section>
 
-    <section>
-      <h2 data-tr="Videolar" data-en="Videos">Videolar</h2>
-      <!-- Video eklemek için: <a class="vid" href="https://youtu.be/..."> ve içine <img src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg" alt=""> -->
-      <div class="vids">
-        <figure class="vplay"><video src="video1.mp4" poster="video1.jpg" controls playsinline preload="none"></video><figcaption>Povu · Power Meets Care</figcaption></figure>
-        <figure class="vplay"><video src="video2.mp4?v=2" poster="video2.jpg" controls playsinline preload="none"></video><figcaption data-tr="Povu Kenya · Dijital İkiz" data-en="Povu Kenya · Digital Twin">Povu Kenya · Dijital İkiz</figcaption></figure>
-        <div class="vid"><span class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap" data-tr="Yeni video · yakında" data-en="New video · coming soon">Yeni video · yakında</span></div>
+    <section class="panel" id="p-sirket" role="tabpanel" aria-labelledby="t-sirket" hidden>
+      <div class="logo-box"><img src="logo.webp" alt="Povu"></div>
+      <div class="item">
+        <i class="c-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></i>
+        <div class="txt"><small data-tr="Görev" data-en="Position">Görev</small><b>Chief Operating Officer</b></div>
       </div>
+      <a class="item" href="https://www.povu.com" target="_blank" rel="noopener">
+        <i class="c-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i>
+        <div class="txt"><small data-tr="Web Sitesi" data-en="Website">Web Sitesi</small><b>www.povu.com</b></div>
+      </a>
+      <div class="item off">
+        <i class="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i>
+        <div class="txt"><small data-tr="İş E-postası" data-en="Work Email">İş E-postası</small><b class="soon" data-tr="Yakında" data-en="Coming soon">Yakında</b></div>
+      </div>
+      <div class="item off">
+        <i class="c-wa" style="background:#d9822b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i>
+        <div class="txt"><small data-tr="Adres" data-en="Address">Adres</small><b class="soon" data-tr="Yakında" data-en="Coming soon">Yakında</b></div>
+      </div>
+    </section>
+
+    <!-- Link eklemek için: class="item off" -> class="item", href="" içine adresi yazın, "Yakında" yerine kullanıcı adını yazın -->
+    <section class="panel" id="p-sosyal" role="tabpanel" aria-labelledby="t-sosyal" hidden>
+      <a class="item off" href="" target="_blank" rel="noopener"><i style="background:#1877f2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.2C16.7 2.1 15.6 2 14.4 2 11.8 2 10 3.6 10 6.5v2H7.2V12H10v10h4V12h2.9l.4-3.5H14Z"/></svg></i><div class="txt"><small>Facebook</small><b class="soon" data-tr="Yakında" data-en="Coming soon">Yakında</b></div></a>
+      <a class="item off" href="" target="_blank" rel="noopener"><i style="background:linear-gradient(45deg,#f9a825,#e1306c,#833ab4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></i><div class="txt"><small>Instagram</small><b class="soon" data-tr="Yakında" data-en="Coming soon">Yakında</b></div></a>
+      <a class="item off" href="" target="_blank" rel="noopener"><i style="background:#000;border:1px solid #333"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/></svg></i><div class="txt"><small>X</small><b class="soon" data-tr="Yakında" data-en="Coming soon">Yakında</b></div></a>
+      <a class="item off" href="" target="_blank" rel="noopener"><i style="background:#ff0000"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg></i><div class="txt"><small>YouTube</small><b class="soon" data-tr="Yakında" data-en="Coming soon">Yakında</b></div></a>
+    </section>
+
+    <section class="panel" id="p-video" role="tabpanel" aria-labelledby="t-video" hidden>
+      <figure class="vplay"><video src="video1.mp4?v=2" poster="video1.jpg" controls playsinline preload="none"></video><figcaption>Povu · Power Meets Care</figcaption></figure>
+      <figure class="vplay"><video src="video2.mp4?v=2" poster="video2.jpg" controls playsinline preload="none"></video><figcaption data-tr="Povu Kenya · Dijital İkiz" data-en="Povu Kenya · Digital Twin">Povu Kenya · Dijital İkiz</figcaption></figure>
+      <div class="vsoon" data-tr="Yeni video · yakında" data-en="New video · coming soon">Yeni video · yakında</div>
     </section>
 
     <footer>Povu · www.povu.com</footer>
   </div>
 </main>
+<div class="toast" id="toast" role="status" hidden></div>
 
 <script>
+var lang='tr';
 function setLang(l){
-  document.documentElement.lang=l;
-  document.querySelectorAll('[data-'+l+']').forEach(e=>e.textContent=e.dataset[l]);
-  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+  lang=l; document.documentElement.lang=l;
+  document.querySelectorAll('[data-'+l+']').forEach(function(e){e.textContent=e.dataset[l]});
+  document.getElementById('lang-label').textContent=l==='tr'?'English':'Türkçe';
   try{localStorage.setItem('lang',l)}catch(e){}
 }
-document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
-let saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
-setLang(saved||((navigator.language||'tr').toLowerCase().startsWith('tr')?'tr':'en'));
+document.getElementById('lang').onclick=function(){setLang(lang==='tr'?'en':'tr')};
+
+document.querySelectorAll('.tab').forEach(function(t){
+  t.onclick=function(){
+    document.querySelectorAll('.tab').forEach(function(x){
+      var on=x===t; x.setAttribute('aria-selected',on);
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+  };
+});
+document.querySelectorAll('.item.off').forEach(function(a){a.removeAttribute('href');a.removeAttribute('target')});
+
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.hidden=false;clearTimeout(t._h);t._h=setTimeout(function(){t.hidden=true},1800)}
+function copy(txt,msg){
+  if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){toast(msg)},function(){toast(txt)})}else{toast(txt)}
+}
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){copy(b.dataset.copy,lang==='tr'?'Kopyalandı':'Copied')}});
+document.getElementById('share').onclick=function(){
+  var url=location.href.split('#')[0];
+  if(navigator.share){navigator.share({title:'Şekip Hayıt · Povu',url:url}).catch(function(){})}
+  else copy(url,lang==='tr'?'Link kopyalandı':'Link copied');
+};
+
+var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+setLang(saved||((navigator.language||'tr').toLowerCase().indexOf('tr')===0?'tr':'en'));
 </script>
+</body>
+</html>
