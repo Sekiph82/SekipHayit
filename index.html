@@ -59,9 +59,9 @@ h1{margin:16px 0 0;font-size:30px;line-height:1.15;font-weight:800;letter-spacin
 .save:active,.share:active,.tile:active{transform:scale(.97)}
 
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.tile{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 6px 14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:13px;font-weight:600}
-.tile i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff}
-.tile i svg{width:20px;height:20px}
+.tile{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:7px;height:52px;padding:0 4px;white-space:nowrap;border-radius:16px;background:var(--surface);border:1px solid var(--line);color:var(--fg);text-decoration:none;font-size:13px;font-weight:600}
+.tile i{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.tile i svg{width:16px;height:16px}
 .c-call{background:var(--blue)} .c-wa{background:var(--wa)} .c-mail{background:#e2574c} .c-web{background:#5865c9}
 
 /* tabs */
@@ -128,7 +128,7 @@ footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
     </div>
 
     <nav class="tiles">
-      <a class="tile" href="tel:+905526042132"><i class="c-call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></i><span data-tr="Arama Yap" data-en="Call">Arama Yap</span></a>
+      <a class="tile" href="tel:+905526042132"><i class="c-call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></i><span data-tr="Ara" data-en="Call">Ara</span></a>
       <a class="tile" href="https://wa.me/905526042132" target="_blank" rel="noopener"><i class="c-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg></i>WhatsApp</a>
       <a class="tile" href="mailto:sekiphayit@hotmail.com"><i class="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><span data-tr="E-posta" data-en="Email">E-posta</span></a>
     </nav>
