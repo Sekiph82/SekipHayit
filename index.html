@@ -52,6 +52,9 @@ h2{font:700 13px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;colo
 .vid .play{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(63,180,236,.18);color:var(--bubble)}
 .vid[href] .play{background:var(--bubble);color:var(--on-bubble)}
 .vid .cap{position:absolute;left:14px;bottom:10px;font-size:13px}
+.vplay{margin:0;display:flex;flex-direction:column;gap:8px}
+.vplay video{display:block;width:100%;max-width:100%;aspect-ratio:16/9;border-radius:14px;background:var(--panel)}
+.vplay figcaption{font-size:14px;color:var(--muted)}
 footer{text-align:center;color:var(--muted);font-size:12px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -107,9 +110,9 @@ footer{text-align:center;color:var(--muted);font-size:12px}
       <h2 data-tr="Videolar" data-en="Videos">Videolar</h2>
       <!-- Video eklemek için: <a class="vid" href="https://youtu.be/..."> ve içine <img src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg" alt=""> -->
       <div class="vids">
-        <div class="vid"><span class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap" data-tr="Video 1 · yakında" data-en="Video 1 · coming soon">Video 1 · yakında</span></div>
-        <div class="vid"><span class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap" data-tr="Video 2 · yakında" data-en="Video 2 · coming soon">Video 2 · yakında</span></div>
-        <div class="vid"><span class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap" data-tr="Video 3 · yakında" data-en="Video 3 · coming soon">Video 3 · yakında</span></div>
+        <figure class="vplay"><video src="video1.mp4" poster="video1.jpg" controls playsinline preload="none"></video><figcaption>Povu · Power Meets Care</figcaption></figure>
+        <figure class="vplay"><video src="video2.mp4" poster="video2.jpg" controls playsinline preload="none"></video><figcaption data-tr="Povu Kenya · Dijital İkiz" data-en="Povu Kenya · Digital Twin">Povu Kenya · Dijital İkiz</figcaption></figure>
+        <div class="vid"><span class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap" data-tr="Yeni video · yakında" data-en="New video · coming soon">Yeni video · yakında</span></div>
       </div>
     </section>
 
