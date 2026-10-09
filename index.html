@@ -91,7 +91,7 @@ h1{margin:16px 0 0;font-size:30px;line-height:1.15;font-weight:800;letter-spacin
 .vsoon{display:grid;place-items:center;aspect-ratio:16/9;border-radius:16px;border:1px dashed var(--line);color:var(--muted);font-size:14px}
 
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.gi{all:unset;cursor:pointer;display:block;border-radius:14px;overflow:hidden;background:var(--surface);aspect-ratio:16/10}
+.gi{all:unset;cursor:pointer;display:block;border-radius:14px;overflow:hidden;background:var(--surface);aspect-ratio:1}
 .gi img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .gi:active img{transform:scale(.97)}
 .gi:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
@@ -197,14 +197,22 @@ footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
     </section>
 
     <section class="panel" id="p-video" role="tabpanel" aria-labelledby="t-video" hidden>
+      <figure class="vplay"><video src="video3.mp4" poster="video3.jpg" controls playsinline preload="none"></video><figcaption data-tr="Povu · Maskotlar iş başında" data-en="Povu · Mascots at work">Povu · Maskotlar iş başında</figcaption></figure>
       <figure class="vplay"><video src="video1.mp4?v=2" poster="video1.jpg" controls playsinline preload="none"></video><figcaption>Povu · Power Meets Care</figcaption></figure>
       <figure class="vplay"><video src="video2.mp4?v=2" poster="video2.jpg" controls playsinline preload="none"></video><figcaption data-tr="Povu Kenya · Dijital İkiz" data-en="Povu Kenya · Digital Twin">Povu Kenya · Dijital İkiz</figcaption></figure>
-      <div class="vsoon" data-tr="Yeni video · yakında" data-en="New video · coming soon">Yeni video · yakında</div>
     </section>
 
     <section class="panel" id="p-galeri" role="tabpanel" aria-labelledby="t-galeri" hidden>
       <!-- Fotoğraf eklemek için: galeri/7.jpg (büyük) ve galeri/7-k.jpg (küçük) yükleyip aşağıya bir satır daha ekleyin -->
       <div class="grid">
+        <button class="gi" type="button" data-i="7" data-tr-c="Povu maskotları" data-en-c="Povu mascots" aria-label="Povu maskotları"><img src="galeri/7-k.jpg" alt="Povu maskotları" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="8" data-tr-c="Povu yunusu" data-en-c="Povu dolphin" aria-label="Povu yunusu"><img src="galeri/8-k.jpg" alt="Povu yunusu" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="9" data-tr-c="Povu logosu" data-en-c="Povu logo" aria-label="Povu logosu"><img src="galeri/9-k.jpg" alt="Povu logosu" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="10" data-tr-c="Povu yunusu ve logo" data-en-c="Povu dolphin & logo" aria-label="Povu yunusu ve logo"><img src="galeri/10-k.jpg" alt="Povu yunusu ve logo" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="11" data-tr-c="Kenya kıyafetli maskotlar" data-en-c="Mascots in Kenyan attire" aria-label="Kenya kıyafetli maskotlar"><img src="galeri/11-k.jpg" alt="Kenya kıyafetli maskotlar" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="12" data-tr-c="Kirlere ve mikroplara karşı" data-en-c="Against dirt and germs" aria-label="Kirlere ve mikroplara karşı"><img src="galeri/12-k.jpg" alt="Kirlere ve mikroplara karşı" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="13" data-tr-c="Savanada Povu yunusu" data-en-c="Povu dolphin in the savanna" aria-label="Savanada Povu yunusu"><img src="galeri/13-k.jpg" alt="Savanada Povu yunusu" loading="lazy" width="480" height="480"></button>
+        <button class="gi" type="button" data-i="14" data-tr-c="Povu yetisi" data-en-c="Povu yeti" aria-label="Povu yetisi"><img src="galeri/14-k.jpg" alt="Povu yetisi" loading="lazy" width="480" height="480"></button>
         <button class="gi" type="button" data-i="1" data-tr-c="Povu ürün ailesi" data-en-c="Povu product family" aria-label="Povu ürün ailesi"><img src="galeri/1-k.jpg" alt="Povu ürün ailesi" loading="lazy" width="480" height="270"></button>
         <button class="gi" type="button" data-i="2" data-tr-c="Power Meets Care · Made in Kenya" data-en-c="Power Meets Care · Made in Kenya" aria-label="Power Meets Care · Made in Kenya"><img src="galeri/2-k.jpg" alt="Power Meets Care · Made in Kenya" loading="lazy" width="480" height="270"></button>
         <button class="gi" type="button" data-i="3" data-tr-c="Povu Kenya kampüsü" data-en-c="Povu Kenya campus" aria-label="Povu Kenya kampüsü"><img src="galeri/3-k.jpg" alt="Povu Kenya kampüsü" loading="lazy" width="480" height="270"></button>
