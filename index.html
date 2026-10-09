@@ -65,9 +65,9 @@ h1{margin:16px 0 0;font-size:30px;line-height:1.15;font-weight:800;letter-spacin
 .c-call{background:var(--blue)} .c-wa{background:var(--wa)} .c-mail{background:#e2574c} .c-web{background:#5865c9}
 
 /* tabs */
-.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:6px -16px 0;padding:2px 16px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;height:40px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:600 14px/1 var(--font);cursor:pointer;white-space:nowrap}
+.tab{min-width:0;height:40px;padding:0 6px;font-size:13px!important;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:600 14px/1 var(--font);cursor:pointer;white-space:nowrap}
 .tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 
 .panel{display:flex;flex-direction:column;gap:10px}
@@ -90,6 +90,19 @@ h1{margin:16px 0 0;font-size:30px;line-height:1.15;font-weight:800;letter-spacin
 .vplay figcaption{font-size:14px;font-weight:600;color:var(--muted)}
 .vsoon{display:grid;place-items:center;aspect-ratio:16/9;border-radius:16px;border:1px dashed var(--line);color:var(--muted);font-size:14px}
 
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gi{all:unset;cursor:pointer;display:block;border-radius:14px;overflow:hidden;background:var(--surface);aspect-ratio:16/10}
+.gi img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gi:active img{transform:scale(.97)}
+.gi:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.mini.dl{background:var(--blue);border-color:var(--blue);color:#fff}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(5,9,14,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:calc(56px + env(safe-area-inset-top,0px)) 12px calc(24px + env(safe-area-inset-bottom,0px))}
+.lb img{max-width:100%;max-height:68vh;border-radius:12px;object-fit:contain}
+.lb p{margin:0;color:var(--fg);font-weight:600;text-align:center}
+.lb-x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px}
+.lb-x,.lb-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);display:grid;place-items:center;cursor:pointer}
+.lb-x svg,.lb-nav svg{width:20px;height:20px}
+.lb-nav{display:flex;align-items:center;gap:18px;color:var(--muted);font-variant-numeric:tabular-nums}
 footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:600;font-size:14px;z-index:9}
 :focus-visible{outline:2px solid var(--sky);outline-offset:2px}
@@ -138,6 +151,8 @@ footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
       <button class="tab" role="tab" id="t-sirket" aria-controls="p-sirket" aria-selected="false" data-tr="Şirket Bilgileri" data-en="Company">Şirket Bilgileri</button>
       <button class="tab" role="tab" id="t-sosyal" aria-controls="p-sosyal" aria-selected="false" data-tr="Sosyal Profiller" data-en="Social">Sosyal Profiller</button>
       <button class="tab" role="tab" id="t-video" aria-controls="p-video" aria-selected="false" data-tr="Videolar" data-en="Videos">Videolar</button>
+      <button class="tab" role="tab" id="t-galeri" aria-controls="p-galeri" aria-selected="false" data-tr="Galeri" data-en="Gallery">Galeri</button>
+      <button class="tab" role="tab" id="t-katalog" aria-controls="p-katalog" aria-selected="false" data-tr="Kataloglar" data-en="Catalogs">Kataloglar</button>
     </div>
 
     <section class="panel" id="p-kisisel" role="tabpanel" aria-labelledby="t-kisisel">
@@ -187,10 +202,47 @@ footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
       <div class="vsoon" data-tr="Yeni video · yakında" data-en="New video · coming soon">Yeni video · yakında</div>
     </section>
 
+    <section class="panel" id="p-galeri" role="tabpanel" aria-labelledby="t-galeri" hidden>
+      <!-- Fotoğraf eklemek için: galeri/7.jpg (büyük) ve galeri/7-k.jpg (küçük) yükleyip aşağıya bir satır daha ekleyin -->
+      <div class="grid">
+        <button class="gi" type="button" data-i="1" data-tr-c="Povu ürün ailesi" data-en-c="Povu product family" aria-label="Povu ürün ailesi"><img src="galeri/1-k.jpg" alt="Povu ürün ailesi" loading="lazy" width="480" height="270"></button>
+        <button class="gi" type="button" data-i="2" data-tr-c="Power Meets Care · Made in Kenya" data-en-c="Power Meets Care · Made in Kenya" aria-label="Power Meets Care · Made in Kenya"><img src="galeri/2-k.jpg" alt="Power Meets Care · Made in Kenya" loading="lazy" width="480" height="270"></button>
+        <button class="gi" type="button" data-i="3" data-tr-c="Povu Kenya kampüsü" data-en-c="Povu Kenya campus" aria-label="Povu Kenya kampüsü"><img src="galeri/3-k.jpg" alt="Povu Kenya kampüsü" loading="lazy" width="480" height="270"></button>
+        <button class="gi" type="button" data-i="4" data-tr-c="Povu Glass Deck" data-en-c="Povu Glass Deck" aria-label="Povu Glass Deck"><img src="galeri/4-k.jpg" alt="Povu Glass Deck" loading="lazy" width="480" height="270"></button>
+        <button class="gi" type="button" data-i="5" data-tr-c="Akıllı üretim" data-en-c="Smart production" aria-label="Akıllı üretim"><img src="galeri/5-k.jpg" alt="Akıllı üretim" loading="lazy" width="480" height="270"></button>
+        <button class="gi" type="button" data-i="6" data-tr-c="Islak proses" data-en-c="Wet processing" aria-label="Islak proses"><img src="galeri/6-k.jpg" alt="Islak proses" loading="lazy" width="480" height="270"></button>
+      </div>
+    </section>
+
+    <section class="panel" id="p-katalog" role="tabpanel" aria-labelledby="t-katalog" hidden>
+      <!-- Katalog eklemek için: PDF'i katalog/ klasörüne yükleyin, class="item off" -> class="item", href="katalog/dosya.pdf" yapın -->
+      <a class="item off" href="" download>
+        <i class="c-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></i>
+        <div class="txt"><small data-tr="Povu Ürün Kataloğu" data-en="Povu Product Catalog">Povu Ürün Kataloğu</small><b class="soon" data-tr="PDF · yakında" data-en="PDF · coming soon">PDF · yakında</b></div>
+        <span class="mini dl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>
+      </a>
+      <a class="item off" href="" download>
+        <i class="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></i>
+        <div class="txt"><small data-tr="Povu Kenya Kurumsal Tanıtım" data-en="Povu Kenya Company Profile">Povu Kenya Kurumsal Tanıtım</small><b class="soon" data-tr="PDF · yakında" data-en="PDF · coming soon">PDF · yakında</b></div>
+        <span class="mini dl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>
+      </a>
+    </section>
+
+
     <footer>Povu · www.povu.com</footer>
   </div>
 </main>
 <div class="toast" id="toast" role="status" hidden></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galeri" hidden>
+  <button class="lb-x" id="lb-x" type="button" aria-label="Kapat / Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+  <div class="lb-nav">
+    <button id="lb-prev" type="button" aria-label="Önceki / Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg></button>
+    <span id="lb-n"></span>
+    <button id="lb-next" type="button" aria-label="Sonraki / Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></button>
+  </div>
+</div>
 
 <script>
 var lang='tr';
@@ -222,6 +274,20 @@ document.getElementById('share').onclick=function(){
   if(navigator.share){navigator.share({title:'Şekip Hayıt · Povu',url:url}).catch(function(){})}
   else copy(url,lang==='tr'?'Link kopyalandı':'Link copied');
 };
+
+var gis=[].slice.call(document.querySelectorAll('.gi')),cur=0,lb=document.getElementById('lb');
+function show(i){cur=(i+gis.length)%gis.length;var g=gis[cur];
+  document.getElementById('lb-img').src='galeri/'+g.dataset.i+'.jpg';
+  document.getElementById('lb-img').alt=document.getElementById('lb-cap').textContent=g.dataset[lang+'C'];
+  document.getElementById('lb-n').textContent=(cur+1)+' / '+gis.length;lb.hidden=false}
+gis.forEach(function(g,i){g.onclick=function(){show(i)}});
+document.getElementById('lb-x').onclick=function(){lb.hidden=true};
+document.getElementById('lb-prev').onclick=function(){show(cur-1)};
+document.getElementById('lb-next').onclick=function(){show(cur+1)};
+lb.addEventListener('click',function(e){if(e.target===lb)lb.hidden=true});
+document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+var sx=0;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))});
 
 var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
 setLang(saved||((navigator.language||'tr').toLowerCase().indexOf('tr')===0?'tr':'en'));
