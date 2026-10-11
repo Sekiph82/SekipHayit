@@ -103,6 +103,16 @@ h1{margin:16px 0 0;font-size:30px;line-height:1.15;font-weight:800;letter-spacin
 .lb-x,.lb-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);display:grid;place-items:center;cursor:pointer}
 .lb-x svg,.lb-nav svg{width:20px;height:20px}
 .lb-nav{display:flex;align-items:center;gap:18px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cat{display:flex;gap:14px;padding:12px;border-radius:16px;background:var(--surface);border:1px solid var(--line);align-items:center}
+.cat-cover{flex:none;width:96px;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px -6px rgba(0,0,0,.6)}
+.cat-cover img{display:block;width:100%;height:auto}
+.cat-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.cat-body b{font-size:16px;font-weight:700}
+.cat-body small{color:var(--muted);font-size:13px;font-weight:500}
+.cat-btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.cat-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);text-decoration:none;font-weight:600;font-size:13px}
+.cat-btn svg{width:16px;height:16px}
+.cat-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
 footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:600;font-size:14px;z-index:9}
 :focus-visible{outline:2px solid var(--sky);outline-offset:2px}
@@ -223,12 +233,18 @@ footer{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
     </section>
 
     <section class="panel" id="p-katalog" role="tabpanel" aria-labelledby="t-katalog" hidden>
-      <!-- Katalog eklemek için: PDF'i katalog/ klasörüne yükleyin, class="item off" -> class="item", href="katalog/dosya.pdf" yapın -->
-      <a class="item off" href="" download>
-        <i class="c-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></i>
-        <div class="txt"><small data-tr="Povu Ürün Kataloğu" data-en="Povu Product Catalog">Povu Ürün Kataloğu</small><b class="soon" data-tr="PDF · yakında" data-en="PDF · coming soon">PDF · yakında</b></div>
-        <span class="mini dl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>
-      </a>
+      <!-- Katalog eklemek için: PDF'i katalog/ klasörüne yükleyin, aşağıdaki .cat bloğunu kopyalayıp dosya adını değiştirin -->
+      <div class="cat">
+        <a class="cat-cover" href="katalog/POVU_Catalogue.pdf" target="_blank" rel="noopener"><img src="katalog/kapak.jpg" alt="Povu katalog kapağı" width="420" height="594" loading="lazy"></a>
+        <div class="cat-body">
+          <b data-tr="Povu Ürün Kataloğu" data-en="Povu Product Catalogue">Povu Ürün Kataloğu</b>
+          <small data-tr="PDF · 52 sayfa · 42 MB" data-en="PDF · 52 pages · 42 MB">PDF · 52 sayfa · 42 MB</small>
+          <div class="cat-btns">
+            <a class="cat-btn" href="katalog/POVU_Catalogue.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span data-tr="Görüntüle" data-en="View">Görüntüle</span></a>
+            <a class="cat-btn primary" href="katalog/POVU_Catalogue.pdf" download="POVU_Catalogue.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span data-tr="İndir" data-en="Download">İndir</span></a>
+          </div>
+        </div>
+      </div>
       <a class="item off" href="" download>
         <i class="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></i>
         <div class="txt"><small data-tr="Povu Kenya Kurumsal Tanıtım" data-en="Povu Kenya Company Profile">Povu Kenya Kurumsal Tanıtım</small><b class="soon" data-tr="PDF · yakında" data-en="PDF · coming soon">PDF · yakında</b></div>
